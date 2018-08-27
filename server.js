@@ -12,9 +12,9 @@ app.use(bodyParser.json())
 
 // var corsOptions = {
 //     origin: 'http://localhost:4200',
-//     optionsSuccessStatus: 200 
+//     optionsSuccessStatus: 200
 // }
-  
+
 // app.use(cors(corsOptions))
 
 // !!! DEVELOPMENT ONLY (end) !!! //
@@ -27,6 +27,35 @@ app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname + "/dist/group-project/"))
 })
 
+app.post('/users', (req, res) => {
+  var body = _.pick(req.body, ['email', 'password']);
+  var user = new User(body);
+
+  user.save().then(() => {
+    return user.generateAuthToken();
+  }).then((token) => {
+    res.header('x-auth', token).send(user);
+  }).catch((e) => {
+    res.status(400).send(e);
+  })
+});
+
+app.get('/users/me', authenticate, (req, res) => {
+  res.send(req.user);
+});
+
+app.post('/users/login', (req, res) => {
+  var body = _.pick(req.body, ['email', 'password']);
+
+  User.findByCredentials(body.email, body.password).then((user) => {
+    return user.generateAuthToken().then((token) => {
+      res.header('x-auth', token).send(user);
+    });
+  }).catch((e) => {
+    res.status(400).send();
+  });
+});
+
+
 // server config
 app.listen(process.env.PORT || 8080);
-
