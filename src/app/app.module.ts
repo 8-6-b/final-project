@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TodoComponent } from './todo/todo.component';
+// import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import { TodoComponent } from './todo/todo.component';
   declarations: [
     AppComponent,
     DashboardComponent,
-    TodoComponent,
+    // TodoComponent,
     LoginComponent,
     RegisterComponent
   ],
