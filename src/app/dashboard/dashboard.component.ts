@@ -9,7 +9,7 @@ import { TodoService } from '../todo.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  todos: Todo[];
+  todos: any;
 
   constructor(private todoService: TodoService) { }
 
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
     .subscribe(todos => this.todos = todos);
   }
 
-  add(name: string): void {
+  add(name: any): void {
     name = name.trim();
     if (!name) { return; }
     this.todoService.addTodo({ name } as Todo)
@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  delete(todo: Todo): void {
+  delete(todo: any): void {
     this.todos = this.todos.filter(t => t !== todo);
     this.todoService.deleteTodo(todo).subscribe();
   }

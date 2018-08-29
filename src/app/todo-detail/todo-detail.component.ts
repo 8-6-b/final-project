@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Dashboard } from '../dashboard';
-import { TodoService }  from '../todo.service';
+// import { Dashboard } from '../dashboard';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-detail',
@@ -11,7 +11,7 @@ import { TodoService }  from '../todo.service';
   styleUrls: [ './todo.component.css' ]
 })
 export class TodoDetailComponent implements OnInit {
-  @Input() todo: Todo;
+  @Input() todo: any;
 
   constructor(
     private route: ActivatedRoute,

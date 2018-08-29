@@ -10,12 +10,21 @@ app.use(bodyParser.json())
 
 // !!! DEVELOPMENT ONLY (start) !!! //
 
+// <<<<<<< HEAD
+// var corsOptions = {
+//     origin: 'http://localhost:4200',
+//     optionsSuccessStatus: 200
+// }
+//
+// app.use(cors(corsOptions))
+// =======
 // var corsOptions = {
 //     origin: 'http://localhost:4200',
 //     optionsSuccessStatus: 200
 // }
 
 // app.use(cors(corsOptions))
+// >>>>>>> 44664b18efbf7b095d9ea936220262ebd7fcbc94
 
 // !!! DEVELOPMENT ONLY (end) !!! //
 
