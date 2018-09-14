@@ -1,39 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Todo } from '../todo';
-import { TodoService } from '../todo.service';
+import { Chore } from '../chores/chore';
+import { ChoreService } from '../chores/chore.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  styleUrls: [ './dashboard.component.scss' ]
 })
 export class DashboardComponent implements OnInit {
-  todos: any;
+  chores: Chore[] = [];
 
-  constructor(private todoService: TodoService) { }
+  constructor(private choreService: ChoreService) { }
 
   ngOnInit() {
-    this.getTodos();
+    this.getChores();
   }
 
-  getTodos(): void {
-    this.todoService.getTodos()
-    .subscribe(todos => this.todos = todos);
+  getChores(): void {
+    this.choreService.getChores()
+      .subscribe(chores => this.chores = chores.slice(1, 5));
   }
-
-  add(name: any): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.todoService.addTodo({ name } as Todo)
-      .subscribe(todo => {
-        this.todos.push(Todo);
-      });
-  }
-
-  delete(todo: any): void {
-    this.todos = this.todos.filter(t => t !== todo);
-    this.todoService.deleteTodo(todo).subscribe();
-  }
-
 }

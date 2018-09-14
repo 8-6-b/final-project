@@ -10,7 +10,7 @@ DEVELOPMENT
 
 PRODUCTION
 * To deploy your app to Heroku, complete the following steps:
-1. Signup for a free Heroku account at https://www.heroku.com
+1. Signup for a free Heroku account at https://www.choreku.com
 2. Create a new Heroku app inside the dashboard
 3. Once created, select the Github integration option
 4. After you've connected to Github, you'll need to select the repo you are connecting to (final-project)

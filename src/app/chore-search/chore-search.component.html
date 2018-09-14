@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col s1">
+
+    <!--
+    <label for="chore-search">Chore Search:</label>      
+    <input #searchBox placeholder="Search" id="chore-search" 
+    (keyup)="search(searchBox.value)" type="text" class="validate">
+    -->
+    <div>
+      <div *ngFor="let chore of chores | async"
+           (click)="gotoDetail(chore)" class="search-result" >
+        {{chore.name}}
+      </div>
+    </div>
+  </div>
+</div>
