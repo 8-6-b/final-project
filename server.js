@@ -8,10 +8,10 @@ const cors = require('cors')
 
 mongoose.connect('mongodb://chris:123456a@ds121262.mlab.com:21262/team86-db');
 
-// // express config
-// const app = express();
-// app.use(bodyParser.json())
-// app.use(passport.initialize());
+// express config
+const app = express();
+app.use(bodyParser.json())
+app.use(passport.initialize());
 
 // // !!! DEVELOPMENT ONLY (start) !!! //
 
