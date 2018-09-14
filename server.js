@@ -30,8 +30,8 @@ app.use(passport.initialize());
 // >>>>>>> 44664b18efbf7b095d9ea936220262ebd7fcbc94
 
 // !!! DEVELOPMENT ONLY (end) !!! //
-require('./models/todo');
-require('./models/user');
+require('./Models/todo');
+require('./Models/user');
 const todos = require('./routes/todos');
 const users = require('./routes/users');
 app.use('/todos', todos);
