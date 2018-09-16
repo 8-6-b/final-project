@@ -2,18 +2,18 @@
 	<h2>Register</h2>
 		
 		<!-- LOGIN FORM -->
-			<form action="/signup" method="post">
+
 				<div class="form-group">
 					<label>Email</label>
-					<input type="text" class="form-control" name="email">
+					<input type="email" placeholder="email" [(ngModel)]="user.email"/>
 				</div>
 				<div class="form-group">
 					<label>Password</label>
-					<input type="password" class="form-control" name="password">
+					<input type="password" placeholder="password" [(ngModel)]="user.password" />
 				</div>
 		
-				<button type="submit" class="btn btn-warning btn-lg">Submit</button>
-			</form>
+				<button (click)="register()">Submit</button>
+
 		
 			<p>Already have an account? <a routerLink="/login" routerLinkActive = "active">Login</a></p>
 			<p>Back to <a href="/">home</a></p>
