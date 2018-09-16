@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
 
   constructor(private userService: UserService) {
 
-  }
+    }
 
   ngOnInit() {
     this.user = {}
