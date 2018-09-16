@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class SignupComponent implements OnInit {
   user: any
 
-  register() {
-    this.userService.register(this.user).subscribe((data: any) => {
+  signup() {
+    this.userService.signup(this.user).subscribe((data: any) => {
       localStorage.setItem('token', data.token) 
     });
   }

@@ -3,7 +3,7 @@ let mongoose = require('mongoose');
 const router = express.Router();
 let User = mongoose.model('User');
 
-router.post('/register', (req, res) => {
+router.post('/signup', (req, res) => {
     let newUser = new User();
     newUser.email = req.body.email;
     newUser.setPassword(req.body.password);
