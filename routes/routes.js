@@ -1,8 +1,7 @@
-import * as express from 'express';
+const express = require('express');
+let ChoreCtrl = require('../controllers/chore');
 
-import ChoreCtrl from '../controllers/chore';
-
-export default function setRoutes(app) {
+modeule.exports = function setRoutes(app) {
 
   const router = express.Router();
 

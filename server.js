@@ -29,8 +29,8 @@ app.use(passport.initialize());
 //app.use('/todos', todos);
 
 // Bring in the routes
-//let setRoutes = require('./routes/routes');
-//setRoutes(app);
+// let setRoutes = require('./routes/routes');
+// setRoutes(app);
 
 require('./models/users');
 const users = require('./routes/users');
