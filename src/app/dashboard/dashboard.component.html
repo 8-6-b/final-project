@@ -1,21 +1,7 @@
-<h2>To Do App</h2>
 
-<div>
-  <label>Todo name:
-    <input #todoName />
-  </label>
-
-  <button (click)="add(todoName.value); todoName.value=''">
-    add
-  </button>
+<h1>Summary of Chores</h1>
+<div class="collection">
+  <a *ngFor="let chore of chores" [routerLink]="['/detail', chore._id]" class="collection-item">
+    <span>{{chore.name}}</span>
+  </a>
 </div>
-
-<ul class="todos">
-  <li *ngFor="let todo of todos">
-    <a routerLink="/detail/{{todo.id}}">
-      <span class="badge">{{todo.id}}</span> {{todo.name}}
-    </a>
-    <button class="delete" title="delete todo"
-      (click)="delete(todo)">x</button>
-  </li>
-</ul>
