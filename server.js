@@ -1,3 +1,5 @@
+// Bring in the routes
+//require('./routes/routes');
 // module imports
 const express = require('express');
 const path = require('path');
@@ -25,11 +27,13 @@ app.use(passport.initialize());
 // // !!! DEVELOPMENT ONLY (end) !!! //
 
 require('./models/todos');
-require('./models/user');
+require('./models/users');
 const todos = require('./routes/todos');
 const users = require('./routes/users');
 app.use('/todos', todos);
 app.use('/users', users);
+
+setRoutes(app);
 
 var distDir = __dirname + "/dist/group-project/";
 app.use(express.static(distDir));
