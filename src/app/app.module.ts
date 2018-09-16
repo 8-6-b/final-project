@@ -6,10 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-// import { TodoComponent } from './todo/todo.component';
+import { ChoreDetailComponent } from './chore-detail/chore-detail.component';
+import { ChoresComponent } from './chores/chores.component';
+//import { ChoreSearchComponent } from './chore-search/chore-search.component';
+
+import { ChoreService } from './chores/chore.service';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   imports: [
@@ -21,11 +25,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   declarations: [
     AppComponent,
     DashboardComponent,
-    // TodoComponent,
+    ChoreDetailComponent,
+    ChoresComponent,
+    //ChoreSearchComponent,
     LoginComponent,
-    RegisterComponent
+    SignupComponent
   ],
-  providers: [],
+  providers: [ ChoreService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
