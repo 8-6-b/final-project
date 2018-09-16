@@ -1,5 +1,5 @@
 <div class="col s4">
-	<h2>Register</h2>
+	<h2>Sign Up</h2>
 		
 		<!-- LOGIN FORM -->
 			<form action="/signup" method="post">
@@ -12,7 +12,7 @@
 					<input type="password" placeholder="password" [(ngModel)]="user.password" />
 				</div>
 		
-				<button (click)="register()">Submit</button>
+				<button (click)="signup()">Submit</button>
 			</form>
 		
 			<p>Already have an account? <a routerLink="/login" routerLinkActive = "active">Login</a></p>
