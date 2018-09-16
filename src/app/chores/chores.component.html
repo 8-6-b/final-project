@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col s4">
+    <span><b>Chore Name:</b> </span>
+    <input #choreName placeholder="Name" type="text" class="validate">
+    <a class="waves-effect waves-light btn" (click)="add(choreName.value); choreName.value=''">
+      Add
+    </a>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col s4">
+      <span><b>My Chores</b></span>
+      <div class="collection">
+      <a *ngFor="let chore of chores" [class.active]="chore === selectedChore" (click)="onSelect(chore)" class="collection-item">
+      <div>{{chore.name}}<a class="secondary-content"><i class="material-icons" (click)="delete(chore); $event.stopPropagation()">delete</i></a></div>
+      </a>
+      </div>
+    </div>
+
+    <div *ngIf="selectedChore">
+  <span>
+    {{selectedChore.name | uppercase}} 
+  </span>
+  <a class="btn" (click)="gotoDetail()">View Details</a>
+</div>
+
+</div>
