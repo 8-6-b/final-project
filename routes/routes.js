@@ -1,11 +1,11 @@
-const express = require('express');
+let express = require('express');
 let ChoreCtrl = require('../controllers/chore');
 
-modeule.exports = function setRoutes(app) {
+module.exports = function setRoutes(app) {
 
-  const router = express.Router();
+  let router = express.Router();
 
-  const choreCtrl = new ChoreCtrl();
+  let choreCtrl = new ChoreCtrl();
 
   // Chores
   router.route('/chores').get(choreCtrl.getAll);

@@ -1,10 +1,11 @@
 // module imports
-const express = require('express');
-const path = require('path');
-let mongoose = require('mongoose');
+let express = require('express'),
+    path = require('path'),
+    bodyParser = require('body-parser'),
+    cors = require('cors'),
+    mongoose = require('mongoose');
+
 let passport = require('passport');
-const bodyParser = require("body-parser");
-const cors = require('cors')
 
 mongoose.connect('mongodb://chris:123456a@ds121262.mlab.com:21262/team86-db');
 
@@ -29,8 +30,8 @@ app.use(passport.initialize());
 //app.use('/todos', todos);
 
 // Bring in the routes
-// let setRoutes = require('./routes/routes');
-// setRoutes(app);
+let setRoutes = require('./routes/routes');
+setRoutes(app);
 
 require('./models/users');
 const users = require('./routes/users');
@@ -46,4 +47,9 @@ app.get('/*', (req, res) => {
 })
 
 // server config
-app.listen(process.env.PORT || 8080);
+//app.listen(process.env.PORT || 8080);
+
+var port = process.env.PORT || 8080;
+var server = app.listen(function(){
+    console.log('Listening on port ' + port);
+});
