@@ -1,16 +1,15 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { TodosService } from './todos.service';
+//import { TodosComponent } from './todos/todos.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChoreDetailComponent } from './chore-detail/chore-detail.component';
 import { ChoresComponent } from './chores/chores.component';
-//import { ChoreSearchComponent } from './chore-search/chore-search.component';
-
 import { ChoreService } from './chores/chore.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -27,11 +26,10 @@ import { SignupComponent } from './signup/signup.component';
     DashboardComponent,
     ChoreDetailComponent,
     ChoresComponent,
-    //ChoreSearchComponent,
     LoginComponent,
     SignupComponent
   ],
-  providers: [ ChoreService ],
+  providers: [ ChoreService, TodosService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

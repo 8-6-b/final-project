@@ -1,22 +1,10 @@
-<div class="col s4">
-	<h2>Login</h2>
-		
-		<!-- LOGIN FORM -->
-			<form action="/login" method="post">
-				<div class="form-group">
-					<label>Email</label>
-					<input type="text" class="form-control" name="email">
-				</div>
-				<div class="form-group">
-					<label>Password</label>
-					<input type="password" class="form-control" name="password">
-				</div>
-		
-				<button type="submit" class="btn btn-warning btn-lg">Login</button>
-			</form>
-		
-			<p>Need an account? <a routerLink="/signup" routerLinkActive = "active">Sign Up</a></p>
-			<p>Back to <a href="/">home</a></p>
-		
+<div>
+	<h1>Login</h1>
+	<input type="email" placeholder="email" [(ngModel)]="user.email"/>
+	<input type="password" placeholder="password" [(ngModel)]="user.password" />
+	<button (click)="login()">Submit</button>
+	<div>
+	  <a routerLink="/signup" routerLinkActive="active">Signup</a>
+	</div>
+	
 </div>
-		

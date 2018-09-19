@@ -1,5 +1,7 @@
 let express = require('express');
 let ChoreCtrl = require('../controllers/chore');
+const mongoose = require('mongoose');
+let Chore = mongoose.model('Chore');
 
 module.exports = function setRoutes(app) {
 
@@ -19,3 +21,4 @@ module.exports = function setRoutes(app) {
   app.use('/api', router);
 
 }
+

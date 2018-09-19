@@ -14,7 +14,10 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class ChoreService {
 
-  private choresUrl = 'api/chores';  // URL to web api
+  private choresUrl = '/';  // URL to web api
+//  private choresUrl = 'api/todo';  // URL to web api
+//  private choresUrl = 'api/chores';  // URL to web api
+
 
   constructor(
     private http: HttpClient,
@@ -103,7 +106,7 @@ export class ChoreService {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+      //console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
