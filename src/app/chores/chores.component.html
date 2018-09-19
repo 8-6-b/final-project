@@ -1,4 +1,19 @@
-<div class="row">
+<h1>Home</h1>
+
+<div>
+  <h5>Create Todo</h5>
+  <input type="name" placeholder="name" [(ngModel)]="todo.name" />
+  <button (click)="create()">Submit</button>
+</div>
+
+<h5>View Todos</h5>
+<ul>
+  <li *ngFor="let t of todos">
+    {{t.description}} <button (click)="edit(t)">edit</button> <button (click)="delete(t._id)">delete</button>
+  </li>
+</ul>
+
+<!-- <div class="row">
   <div class="col s4">
     <span><b>Chore Name:</b> </span>
     <input #choreName placeholder="Name" type="text" class="validate">
@@ -25,4 +40,4 @@
   <a class="btn" (click)="gotoDetail()">View Details</a>
 </div>
 
-</div>
+</div> -->

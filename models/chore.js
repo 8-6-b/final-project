@@ -1,8 +1,9 @@
-let mongoose = require('mongoose');
+let mongoose = require("mongoose");
 
 let choreSchema = new mongoose.Schema({
-  name: String
-}, { collection: 'chores'});
+    name: String,
+    id: Number
+},{ collection: 'chores' });
 
 let Chore = mongoose.model('Chore', choreSchema);
 

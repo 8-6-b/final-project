@@ -1,11 +1,13 @@
-const express = require('express');
+let express = require('express');
 let ChoreCtrl = require('../controllers/chore');
+const mongoose = require('mongoose');
+let Chore = mongoose.model('Chore');
 
-modeule.exports = function setRoutes(app) {
+module.exports = function setRoutes(app) {
 
-  const router = express.Router();
+  let router = express.Router();
 
-  const choreCtrl = new ChoreCtrl();
+  let choreCtrl = new ChoreCtrl();
 
   // Chores
   router.route('/chores').get(choreCtrl.getAll);
@@ -19,3 +21,4 @@ modeule.exports = function setRoutes(app) {
   app.use('/api', router);
 
 }
+
