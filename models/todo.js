@@ -1,8 +1,7 @@
 let mongoose = require('mongoose');
 
 let TodoSchema = new mongoose.Schema({
-  name: String,
-  id: Number
+  description: String
 });
 
 let Todo = mongoose.model('Todo', TodoSchema);
