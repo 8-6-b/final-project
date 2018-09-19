@@ -2,10 +2,9 @@
 
 <div>
   <h5>Create Todo</h5>
-  <input type="name" placeholder="name" [(ngModel)]="todo.name" />
-  <button (click)="create()">Submit</button>
+  <input type="description" placeholder="description" [(ngModel)]="todo.description" />
+ <button (click)="create()">Submit</button>
 </div>
-
 <h5>View Todos</h5>
 <ul>
   <li *ngFor="let t of todos">
@@ -35,7 +34,7 @@
 
     <div *ngIf="selectedChore">
   <span>
-    {{selectedChore.name | uppercase}} 
+    {{selectedChore.name | uppercase}}
   </span>
   <a class="btn" (click)="gotoDetail()">View Details</a>
 </div>
