@@ -1,16 +1,28 @@
-<h1>Home</h1>
+{{title}}
 
-<div>
-  <h5>Create Todo</h5>
+<div class="row">
+  <div class="col s6">
+    <span><b>Create a To Do Task</b></span>
   <input type="description" placeholder="description" [(ngModel)]="todo.description" />
- <button (click)="create()">Submit</button>
+  <a class="waves-effect waves-light btn" (click)="create()">
+      Add
+    </a>
+  </div>
 </div>
-<h5>View Todos</h5>
+
+
+<div class="row">
+    <div class="col s4">
+      <span><b>To Do List</b></span>
+      <div class="collection">
 <ul>
   <li *ngFor="let t of todos">
-    {{t.description}} <button (click)="edit(t)">edit</button> <button (click)="delete(t._id)">delete</button>
+    <button (click)="edit(t)">Edit Task</button> <a class="secondary-content"><i class="material-icons" (click)="delete(t._id); $event.stopPropagation()">delete</i></a> - {{t.description}} 
   </li>
 </ul>
+</div>
+</div>
+</div>
 
 <!-- <div class="row">
   <div class="col s4">

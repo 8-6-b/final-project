@@ -4,7 +4,7 @@ let express = require('express'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
     mongoose = require('mongoose');
-
+    //config = require('mongodb://admin:admin@ds149491.mlab.com:49491/codercamps_tshurley')
 let passport = require('passport');
 
 
@@ -19,7 +19,7 @@ mongoose.connect('mongodb://admin:admin@ds149491.mlab.com:49491/codercamps_tshur
 
 // express config
 const app = express();
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(passport.initialize());
 
 // !!! DEVELOPMENT ONLY (start) !!! //

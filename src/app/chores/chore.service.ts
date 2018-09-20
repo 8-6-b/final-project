@@ -14,9 +14,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class ChoreService {
 
-  private choresUrl = '/';  // URL to web api
-//  private choresUrl = 'api/todo';  // URL to web api
-//  private choresUrl = 'api/chores';  // URL to web api
+private choresUrl = 'api/chores';  // URL to web api
 
 
   constructor(

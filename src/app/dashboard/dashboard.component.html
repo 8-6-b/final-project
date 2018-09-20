@@ -1,12 +1,13 @@
-
- <h1>Summary of Chores</h1>
+<h5>Summary of To Do List</h5>
 <ul>
   <li *ngFor="let t of todos">
     {{t.description}}
   </li>
 </ul>
+
+  <!--
 <div>
-  <!--<a *ngFor="let chore of chores"
+<a *ngFor="let chore of chores"
   routerLink="/detail/{{chore.id}}">
  <div>{{chore.name}}</div>
   </a>
