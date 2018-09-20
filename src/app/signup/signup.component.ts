@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -11,13 +12,17 @@ export class SignupComponent implements OnInit {
 
   signup() {
     this.userService.signup(this.user).subscribe((data: any) => {
-      localStorage.setItem('token', data.token) 
+      localStorage.setItem('token', data.token)
+      this.router.navigate(['/login'])
     });
   }
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {
 
-    }
+  }
 
   ngOnInit() {
     this.user = {}

@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChoreDetailComponent } from './chore-detail/chore-detail.component';
 import { ChoresComponent } from './chores/chores.component';
-import { ChoreService } from './chores/chore.service';
+//import { ChoreService } from './chores/chore.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
@@ -29,7 +29,7 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     SignupComponent
   ],
-  providers: [ ChoreService, TodosService ],
+  providers: [ TodosService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
