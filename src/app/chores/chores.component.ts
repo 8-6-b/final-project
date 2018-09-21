@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../todos.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-chores',
@@ -12,7 +13,8 @@ export class ChoresComponent implements OnInit {
 
   create() {
     this.todosService.createTodo(this.todo).subscribe(() => {
-      window.location.reload();
+      this.router.navigate(['/mytodo']);
+      //window.location.reload();
     });
   }
 
@@ -29,7 +31,10 @@ export class ChoresComponent implements OnInit {
     });
   }
 
-  constructor(private todosService: TodosService) {
+  constructor(
+    private todosService: TodosService,
+    private router: Router
+    ) {
     this.todosService.getTodos().subscribe((data: any) => {
       this.todos = data;
     });

@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },
   { path: 'detail/:id', component: ChoreDetailComponent },
-  { path: 'todos',     component: ChoresComponent, data: {title: "To Do Tasks"} },
+  { path: 'mytodo',     component: ChoresComponent, data: {title: "To Do Tasks"} },
   { path: 'login',      component: LoginComponent },
   { path: 'signup',     component: SignupComponent} 
 ];
