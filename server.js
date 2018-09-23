@@ -1,3 +1,7 @@
+//Config this freakin app
+require('./config/config.js');
+console.log(process.env.JWT_SECRET);
+
 // module imports
 let express = require('express'),
     path = require('path'),
