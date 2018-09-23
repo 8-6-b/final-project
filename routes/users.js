@@ -2,12 +2,13 @@
 const express = require('express');
 let mongoose = require('mongoose');
 //const router = express.Router();
+const _ = require('lodash');
 var app = express();
 var authenticate = require('../middleware/authenticate');
 
 let User = mongoose.model('User');
 
-app.post('/users', (req, res) => {
+app.post('/', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
     var user = new User(body);
   
@@ -16,15 +17,16 @@ app.post('/users', (req, res) => {
     }).then((token) => {
       res.header('x-auth', token).send(user);
     }).catch((e) => {
+      console.log(e);
       res.status(400).send(e);
     })
   });
   
-  app.get('/users/me', authenticate, (req, res) => {
+  app.get('/me', authenticate, (req, res) => {
     res.send(req.user);
   });
   
-  app.post('/users/login', (req, res) => {
+  app.post('/login', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
   
     User.findByCredentials(body.email, body.password).then((user) => {
@@ -36,7 +38,7 @@ app.post('/users', (req, res) => {
     });
   });
   
-  app.delete('/users/me/token', authenticate, (req, res) => {
+  app.delete('/me/token', authenticate, (req, res) => {
     req.user.removeToken(req.token).then(() => {
       res.status(200).send();
     }, () => {
@@ -44,7 +46,7 @@ app.post('/users', (req, res) => {
     });
   });
 
-  module.exports = {app};
+  module.exports = app;
 
 // router.post('/signup', (req, res) => {
 //     let newUser = new User();
