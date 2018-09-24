@@ -1,10 +1,13 @@
-<h5>Summary of To Do List</h5>
+<h2>Dashboard</h2>
 <ol>
   <li *ngFor="let t of todos">
     {{t.description}}
   </li>
 </ol>
 
+<div>
+	  <a routerLink="/login" routerLinkActive = "active">Log Out</a>
+</div>
   <!--
 <div>
 <a *ngFor="let chore of chores"
