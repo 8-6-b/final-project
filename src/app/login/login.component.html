@@ -2,7 +2,7 @@
 	<h1>Login</h1>
 	<input type="email" placeholder="email" [(ngModel)]="user.email"/>
 	<input type="password" placeholder="password" [(ngModel)]="user.password" />
-	<button (click)="login()">Submit</button>
+	<button class="btn btn-default" (click)="login()">Submit</button>
 	<div>
 	  <a routerLink="/signup" routerLinkActive="active">Signup</a>
 	</div>
