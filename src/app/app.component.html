@@ -1,8 +1,34 @@
-<nav>
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+
+          <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#" style="background-color:salmon w3-theme-d5;">To Do App</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a routerLink="/dashboard" routerLinkActive="active">Home</a></li>
+                    <li><a routerLink="/mytodo" routerLinkActive="active">To Do</a></li>
+                    <li><a routerLink="/login" routerLinkActive = "active">Login</a></li>
+                </ul>
+              </div>
+            </nav>
+
+            <div class="col-sm-6 offset-sm-3">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <nav>
   <div class="nav-wrapper">
     <a routerLink="/dashboard">{{title}}</a>
-
-    
     <ul>
       <li><a routerLink="/dashboard" routerLinkActive="active">Home</a></li>
       <li><a routerLink="/mytodo" routerLinkActive="active">Todo</a></li>
@@ -11,5 +37,5 @@
   </div>
 </nav>
 <br />
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
   

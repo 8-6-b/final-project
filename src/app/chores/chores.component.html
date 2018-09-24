@@ -1,9 +1,43 @@
-{{title}}
+<style>
 
+    .buttontask {
+        background-color: rgb(14, 122, 185);
+        border: none;
+        color: white;
+        padding: 5px 22px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+        }
+
+    .buttondelete {
+        background-color: rgb(218, 47, 47);
+        border: none;
+        color: white;
+        padding: 5px 22px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+        }
+
+        .button2:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    </style>
+
+<h2>To do tasks</h2>
 <div class="row">
   <div class="col s6">
-    <span><b>Create a To Do Task</b></span>
-  <input type="description" placeholder="description" [(ngModel)]="todo.description" />
+    <span><b>New Task: &nbsp;&nbsp;</b></span>
+  <input type="description" placeholder="Enter Task Here" [(ngModel)]="todo.description" />
   <a class="waves-effect waves-light btn" (click)="create()">
       Add
     </a>
@@ -17,11 +51,16 @@
       <div class="collection">
 <ol>
   <li *ngFor="let t of todos">
-    <button (click)="edit(t)">Edit Task</button><a class="secondary-content"><i (click)="delete(t._id); $event.stopPropagation()">delete</i></a> - {{t.description}} 
+    <button class="buttontask button2" (click)="edit(t)">Edit Task</button><a class="secondary-content">&nbsp;
+      <button class="buttondelete button2" (click)="delete(t._id); $event.stopPropagation()">delete</button></a> {{t.description}} 
   </li>
 </ol>
 </div>
 </div>
+</div>
+
+<div>
+	  <a routerLink="/login" routerLinkActive = "active">Log Out</a>
 </div>
 
 <!-- <div class="row">
