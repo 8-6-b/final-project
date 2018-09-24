@@ -15,11 +15,11 @@
     <div class="col s4">
       <span><b>To Do List</b></span>
       <div class="collection">
-<ul>
+<ol>
   <li *ngFor="let t of todos">
-    <button (click)="edit(t)">Edit Task</button> <a class="secondary-content"><i class="material-icons" (click)="delete(t._id); $event.stopPropagation()">delete</i></a> - {{t.description}} 
+    <button (click)="edit(t)">Edit Task</button><a class="secondary-content"><i (click)="delete(t._id); $event.stopPropagation()">delete</i></a> - {{t.description}} 
   </li>
-</ul>
+</ol>
 </div>
 </div>
 </div>

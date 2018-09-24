@@ -13,7 +13,7 @@ export class ChoresComponent implements OnInit {
 
   create() {
     this.todosService.createTodo(this.todo).subscribe(() => {
-      this.router.navigate(['/mytodo']);
+      this.router.navigate(['/dashboard']);
       //window.location.reload();
     });
   }
@@ -21,13 +21,15 @@ export class ChoresComponent implements OnInit {
   edit(td) {
     let newTodo = window.prompt(`Update Todo: ${td.description}`);
     this.todosService.editTodo(newTodo, td._id).subscribe(() => {
-      window.location.reload();
+      this.router.navigate(['/dashboard']);
+      //window.location.reload();
     });
   }
 
   delete(id) {
     this.todosService.deleteTodo(id).subscribe(() => {
-      window.location.reload();
+      this.router.navigate(['/dashboard']);
+      //window.location.reload();
     });
   }
 
