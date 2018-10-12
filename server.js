@@ -26,11 +26,11 @@ app.use(passport.initialize());
 
 
 // !!! DEVELOPMENT ONLY (start) !!! //
-var corsOptions = {
-    origin: 'http://localhost:4200',
-    optionsSuccessStatus: 200
-}
-app.use(cors(corsOptions))
+// var corsOptions = {
+//     origin: 'http://localhost:4200',
+//     optionsSuccessStatus: 200
+// }
+// app.use(cors(corsOptions))
 // !!! DEVELOPMENT ONLY (end) !!! //
 
 require('./models/todo');
