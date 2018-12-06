@@ -1,11 +1,10 @@
-# To Do App
-
-Simple Angular To Do Application.
+# Angular To Do App project
+The TODO app, created as a group effort, allows a user to create, read, update and delete tasks. These tasks are
 
 DEVELOPMENT
 * Open CLI window
 1. *cd group-project*
-2. *npm install* 
+2. *npm install*
 3. *ng build*
 4. *npm start*
 * Your app will be served on port 8080
