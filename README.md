@@ -1,4 +1,6 @@
-# final-project
+# To Do App
+
+Simple Angular To Do Application.
 
 DEVELOPMENT
 * Open CLI window
