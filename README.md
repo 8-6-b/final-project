@@ -2,7 +2,9 @@
 The TODO app, created as a group effort, allows a user register and log in to create, read, update or delete tasks, and store data in a mongodb database.
 
 # View app
-App can be viewed on localhost: 8080 in the user's browser
+App can be viewed on localhost: 8080 in the user's browser.
+[localhost:8080](http://localhost:8080/login)
+
 # DEVELOPMENT
 * Open CLI window
 1. *create new folder*
