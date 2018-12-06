@@ -1,7 +1,7 @@
 # Angular To Do App project
 The TODO app, created as a group effort, allows a user register and log in to create, read, update or delete tasks, and store data in a mongodb database.
 
-#DEVELOPMENT
+# DEVELOPMENT
 * Open CLI window
 1. *create new folder*
 2. *npm install*
@@ -9,7 +9,7 @@ The TODO app, created as a group effort, allows a user register and log in to cr
 4. *npm start*
 * Your app will be served on port 8080
 
-PRODUCTION
+# PRODUCTION
 * To deploy your app to Heroku, complete the following steps:
 1. Signup for a free Heroku account at https://www.heroku.com
 2. Create a new Heroku app inside the dashboard
